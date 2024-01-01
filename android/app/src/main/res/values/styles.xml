@@ -4,6 +4,12 @@
     <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
+        <item name="checkboxStyle">@style/CustomAppCompatCheckBox</item>
     </style>
+
+    <style name="CustomAppCompatCheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:buttonTint">@color/primaryColor</item>
+    </style>
+
 
 </resources>

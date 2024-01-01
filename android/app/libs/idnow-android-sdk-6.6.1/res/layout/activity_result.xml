@@ -1,0 +1,227 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bgPrimaryColor"
+                tools:context="de.idnow.sdk.Activities.Activities_ResultActivity">
+
+    <ScrollView
+        android:id="@+id/result_activity_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ScrollView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_vertical_margin">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/result_logo"
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/idnow_di_10dp"
+                android:layout_gravity="center_horizontal">
+            </com.airbnb.lottie.LottieAnimationView>
+
+            <TextView
+                android:id="@+id/user_abort_feedback_thankyou"
+                android:text="@string/user_abort_feedback_thankyou"
+                android:layout_gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="@color/primarytextColor"
+                android:textStyle="bold"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_marginBottom="@dimen/idnow_di_10dp"
+                android:layout_height="wrap_content"></TextView>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/imageViewStatus"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/result_icon_height"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:layout_marginBottom="@dimen/idnow_di_10dp"
+                android:src="@drawable/ic_result_success">
+            </com.airbnb.lottie.LottieAnimationView>
+
+            <TextView
+                android:id="@+id/textViewStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/result_screen_status_success"
+                android:textColor="@color/primarytextColor"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewTransactionNrTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/result_vertical_margin"
+                android:gravity="center_horizontal"
+                android:text="@string/result_screen_transaction_nr_title"
+                android:textColor="@color/primarytextColor"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewTransactionNrContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="16sp"
+                android:textColor="@color/primarytextColor"/>
+
+            <TextView
+                android:id="@+id/textViewInformation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/result_vertical_margin"
+                android:layout_marginBottom="@dimen/result_vertical_margin"
+                android:gravity="center_horizontal"
+                android:text="@string/result_screen_info_success_video_ident"
+                android:textColor="@color/primarytextColor"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/buttonRetry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="@string/result_screen_button_retry"
+                android:textAllCaps="false"
+                android:textColor="@color/result_screen_retry_btn_text_color" />
+
+            <Button
+                android:id="@+id/buttonDone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="@dimen/result_margin_between_result_buttons"
+                android:text="@string/result_screen_button_done"
+                android:textAllCaps="false"
+                android:textColor="@color/result_screen_done_btn_text_color"/>
+        </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/token_retries_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/idnow_di_20dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/idnow_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/idnow_di_20dp"
+            android:layout_marginBottom="@dimen/idnow_di_20dp"
+             />
+
+        <TextView
+            android:id="@+id/token_retries_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="TITLE"
+            android:textColor="#000000"
+            android:textSize="@dimen/vip_title"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/document_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/token_retries_buttons_layout"
+                android:layout_margin="@dimen/idnow_di_20dp"
+                android:layout_marginBottom="@dimen/idnow_di_15dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/token_retries_agent_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|center_horizontal"
+                    android:layout_weight="2"/>
+
+                <TextView
+                    android:id="@+id/token_retries_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/idnow_di_10dp"
+                    android:layout_marginRight="@dimen/idnow_di_10dp"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="Message"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/vip_text" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/token_retries_buttons_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="@dimen/idnow_di_20dp"
+                android:layout_marginRight="@dimen/idnow_di_20dp"
+                android:layout_marginBottom="@dimen/idnow_di_15dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/main_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Main Button"
+                    android:textColor="@color/buttontextColor"
+                    android:textSize="@dimen/idnow_ts_18" />
+
+                <TextView
+                    android:id="@+id/secondary_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/idnow_di_20dp"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/vip_starting_progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/primaryColor"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>

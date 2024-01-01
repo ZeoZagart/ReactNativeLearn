@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/idnow_di_5dp"
+    android:paddingTop="@dimen/idnow_di_5dp"
+    android:background="@color/bgSecondaryColor"
+    android:paddingStart="@dimen/idnow_di_10dp"
+    android:paddingEnd="@dimen/idnow_di_10dp"
+    android:gravity="center_vertical"
+    >
+
+    <TextView
+        android:id="@+id/country_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primarytextColor"
+        android:textSize="@dimen/idnow_ts_18"
+        tools:text="text"
+        android:gravity="center_vertical" />
+
+</LinearLayout>

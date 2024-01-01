@@ -24,6 +24,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import NewModuleButton from './src/NewModuleButton';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -42,6 +43,7 @@ function Section({children, title}: SectionProps): JSX.Element {
         ]}>
         {title}
       </Text>
+      <NewModuleButton />
       <Text
         style={[
           styles.sectionDescription,

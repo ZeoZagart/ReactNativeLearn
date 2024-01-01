@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_card_vip"
+    android:weightSum="4">
+    <LinearLayout
+        android:id="@+id/card_vip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="4"
+        android:visibility="visible"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/circleCheck1"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+            </com.airbnb.lottie.LottieAnimationView>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/circleCheck2"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+            </com.airbnb.lottie.LottieAnimationView>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/circleCheck3"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+            </com.airbnb.lottie.LottieAnimationView>
+
+            <LinearLayout
+                android:id="@+id/status_layout"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="@drawable/rounded_layout_take_picture"
+                android:layout_marginLeft="5dp"
+                >
+
+                <TextView
+                    android:id="@+id/num_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="@string/num_text"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/idnow_di_5dp"
+                    android:layout_marginTop="@dimen/idnow_di_5dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/right_side_border"
+                    android:text=" "
+                    android:textSize="20sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/idcard_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/idcard_text"
+                    android:layout_marginLeft="@dimen/idnow_di_5dp"
+                    android:layout_marginRight="@dimen/idnow_di_5dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeMaxTextSize="25sp"
+                    android:textColor="@color/primarytextColor"
+                    android:textStyle="bold"></TextView>
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <LinearLayout
+                android:id="@+id/circle1"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginRight="10dp"
+                android:visibility="gone"
+                android:background="@drawable/circle_number">
+                <TextView
+                    android:id="@+id/textViewStepCounter1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="1"
+                    android:textColor="@color/primarytextColor"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/circle2"
+                android:layout_width="35dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/circle_number"
+                android:gravity="center"
+                android:visibility="visible"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewStepCounter2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="2"
+                    android:textColor="@color/basicInputField"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/circle3"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/circle_number">
+
+                <TextView
+                    android:id="@+id/textViewStepCounter3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="3"
+                    android:textColor="@color/basicInputField"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/circle4"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/circle_number">
+
+                <TextView
+                    android:id="@+id/textViewStepCounter4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="4"
+                    android:textColor="@color/basicInputField"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/agent_card_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_agent_title_normal"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/idcard_text_normal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/idcard_text_steps"
+            android:layout_marginLeft="@dimen/idnow_di_5dp"
+            android:layout_marginRight="@dimen/idnow_di_5dp"
+            android:layout_marginTop="@dimen/idnow_di_10dp"
+            android:layout_marginBottom="@dimen/idnow_di_10dp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeMaxTextSize="25sp"
+            android:gravity="center"
+            android:textSize="@dimen/idnow_di_20dp"
+            android:textColor="@color/primarytextColor"
+            android:textStyle="bold"></TextView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="2">
+
+        <TextView
+            android:id="@+id/mainTextDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/primarytextColor"
+            android:textSize="22sp"
+            android:text="@string/mainTextDescription"></TextView>
+        <TextView
+            android:id="@+id/textDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="@dimen/idnow_di_15dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="@dimen/idnow_ts_18"
+            android:visibility="gone"
+            android:textColor="@color/primarytextColor"
+            android:text="@string/textDescription"></TextView>
+
+        <EditText
+            android:id="@+id/textSMSCode"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/idnow_di_20dp"
+            android:layout_marginRight="@dimen/idnow_di_20dp"
+            android:background="@drawable/background_edittext_coba"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/idnow_di_10dp"
+            android:inputType="phone"
+            android:textSize="@dimen/idnow_ts_16"
+            android:visibility="gone">
+
+        </EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:visibility="visible"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:id="@+id/layoutAction_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:weightSum="2"
+            android:visibility="gone"
+            tools:ignore="NestedWeights">
+
+            <LinearLayout
+                android:id="@+id/retakeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/vip_button_steps_disable"
+                android:gravity="center">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/retakeImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    android:layout_margin="5dp">
+                </com.airbnb.lottie.LottieAnimationView>
+
+                <TextView
+                    android:id="@+id/retakeAction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="@string/retakeAction"
+                    android:textColor="@color/primarytextColor"
+                    android:textSize="18sp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/continueButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="@string/continueButton"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white">
+
+                </Button>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutAction_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/idnow_di_20dp"
+            android:layout_gravity="center"
+            android:visibility="gone">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/takePictureButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/idnow_di_20dp"
+                android:visibility="visible"></com.airbnb.lottie.LottieAnimationView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/requestIdentCodeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/idnow_di_20dp"
+        android:layout_marginRight="@dimen/idnow_di_20dp"
+        android:layout_marginBottom="@dimen/idnow_di_20dp"
+        android:background="@drawable/rounded_background_orange_old"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:visibility="gone"
+        android:textSize="@dimen/idnow_ts_22"
+        android:text="@string/requestIdentCodeButton"
+        >
+    </Button>
+
+</LinearLayout>

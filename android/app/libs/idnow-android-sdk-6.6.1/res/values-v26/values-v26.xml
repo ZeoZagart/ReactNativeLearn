@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="IdnowSdkTheme" parent="Theme.AppCompat.DayNight">
+        <!-- applying color "text_default" for common text elements -->
+        <item name="android:textColor">@color/text_default</item>
+        <item name="android:editTextStyle">@style/IdnowSdkTheme.EditText</item>
+    </style>
+</resources>

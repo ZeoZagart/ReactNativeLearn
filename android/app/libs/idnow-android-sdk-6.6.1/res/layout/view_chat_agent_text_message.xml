@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:background="@color/bgPrimaryColor"
+                android:layout_alignParentStart="true"
+                android:paddingBottom="12dp"
+                android:paddingTop="12dp">
+
+    <FrameLayout android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:background="@color/bgPrimaryColor"
+                 android:layout_marginRight="42dp">
+        <RelativeLayout
+            android:id="@+id/bubble"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <TextView
+                android:id="@+id/messageText"
+                style="@style/chat_text_message_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_margin="8dp"
+                android:textColor="@color/chat_agent_message_text_color"/>
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/timeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:gravity="bottom"
+            android:textSize="11sp"
+            android:textColor="@color/chat_agent_time_text_color"/>
+
+    </FrameLayout>
+</RelativeLayout>

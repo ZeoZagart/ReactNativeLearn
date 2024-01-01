@@ -148,12 +148,43 @@ android {
     }
 }
 
+repositories {
+    // libs directory contains idnow sdk aar file and bouncycastle jar files
+    // flatDir is used to add the libs directory as a repository
+    maven() {
+        url "https://raw.githubusercontent.com/idnow/de.idnow.android/master"
+    }
+}
+
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
-
+    implementation files('libs/idnow-android-sdk-6.6.1.aar')
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
-    implementation 'androidx.core:core-ktx:+'
+
+    
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.annotation:annotation:1.3.0'
+    implementation "androidx.constraintlayout:constraintlayout:2.1.3"
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'com.googlecode.libphonenumber:libphonenumber:8.10.9'
+    implementation 'me.relex:circleindicator:2.1.6'
+    implementation 'de.idnow.insights:idnow-android-insights-sdk:1.2.0'
+    implementation 'com.airbnb.android:lottie:5.1.1'
+    implementation 'androidx.preference:preference:1.2.0'
+    implementation "androidx.percentlayout:percentlayout:1.0.0"
+    implementation  'com.google.code.gson:gson:2.8.6'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'org.jetbrains:annotations:15.0'
+    implementation files ('libs/bcprov-jdk15to18-1.70.jar')
+    implementation files ('libs/bctls-jdk15to18-1.70.jar')
+    implementation files ('libs/bcutil-jdk15to18-1.70.jar')
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
     debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
@@ -168,5 +199,4 @@ dependencies {
     }
 }
 
-apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle")
-apply plugin: 'org.jetbrains.kotlin.android'; applyNativeModulesAppBuildGradle(project)
+apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)

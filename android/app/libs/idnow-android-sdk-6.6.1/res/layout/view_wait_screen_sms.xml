@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_alignParentBottom="true"
+	android:layout_gravity="bottom">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:background="@color/wait_screen_fragment_busy_animation"
+		android:paddingTop="@dimen/sms_wait_screen_padding_top"
+		android:paddingStart="@dimen/sms_wait_screen_padding_start"
+		android:paddingEnd="@dimen/sms_wait_screen_padding_end"
+		android:paddingBottom="@dimen/sms_wait_screen_padding_bottom">
+
+		<com.airbnb.lottie.LottieAnimationView
+			android:id="@+id/wait_fragment_busy_animation"
+			android:layout_width="wrap_content"
+			android:layout_height="@dimen/wait_screen_fragment_anim_container_height"
+			android:backgroundTint="@color/wait_screen_fragment_busy_animation"
+			android:layout_gravity="center_horizontal" />
+
+		<TextView
+			android:id="@+id/wait_screen_sms_title"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:layout_marginTop="@dimen/sms_wait_screen_title_margin_top"
+			android:layout_marginBottom="@dimen/sms_wait_screen_title_margin_bottom"
+			android:textColor="@color/wait_screen_sms_title_text_color"
+			android:textSize="@dimen/sms_wait_screen_title_text_size"
+			tools:text="@string/waiting_screen_title_waiting_list"/>
+
+		<TextView
+			android:id="@+id/wait_screen_busy_info"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textColor="@color/wait_screen_sms_title_text_color"
+			android:gravity="center"
+			android:layout_marginTop="@dimen/sms_wait_screen_queue_info_margin_top"
+			android:layout_marginBottom="@dimen/sms_wait_screen_queue_info_margin_bottom"
+			android:textSize="@dimen/sms_wait_screen_queue_info_text_size"
+			tools:text="@string/waiting_screen4_description"/>
+
+		<TextView
+			android:id="@+id/wait_screen_sms_description"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:layout_marginTop="@dimen/sms_wait_screen_description_margin_top"
+			android:layout_marginBottom="@dimen/sms_wait_screen_description_margin_bottom"
+			android:textColor="@color/wait_screen_sms_description_text_color"
+			android:textSize="@dimen/sms_wait_screen_description_text_size"
+			tools:text="@string/push_stage1_details"/>
+
+		<EditText
+			android:id="@+id/wait_screen_sms_edit_text"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/sms_wait_screen_edit_text_margin_top"
+			android:layout_marginBottom="@dimen/sms_wait_screen_edit_text_margin_bottom"
+			android:inputType="phone"
+			tools:hint="+4917610305432"/>
+
+		<Button
+			android:id="@+id/wait_screen_sms_notify_button"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textAllCaps="false"
+			android:textColor="@color/buttontextColor"
+			android:layout_marginBottom="@dimen/sms_wait_screen_notify_btn_margin_bottom"
+			tools:text="@string/waiting_screen_action_notify_sms"/>
+
+		<Button
+			android:id="@+id/wait_screen_sms_wait_button"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textAllCaps="false"
+			android:layout_marginTop="@dimen/sms_wait_screen_wait_btn_margin_top"
+			android:layout_marginBottom="@dimen/sms_wait_screen_wait_btn_margin_bottom"
+			android:visibility="gone"
+			tools:text="@string/waiting_screen_action_ok_wait"/>
+
+		<de.idnow.sdk.util.ClickableTextView
+			android:id="@+id/wait_screen_sms_clickable_text"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:layout_marginTop="@dimen/sms_wait_screen_clickable_text_view_margin_top"
+			android:textSize="@dimen/sms_wait_screen_clickable_text_view_text_size"
+			android:textColor="@color/wait_screen_sms_clickable_text_color"
+			android:clickable="true"
+			android:focusable="true"
+			tools:text="@string/waiting_screen_action_no_wait"/>
+
+	</LinearLayout>
+
+</FrameLayout>

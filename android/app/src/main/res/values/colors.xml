@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="bgSecondaryColor">#ffffff</color>
+	<color name="primarytextColor">#000000</color>
+	<color name="basicInputField">#000000</color>
+	<color name="primaryColor">#0052ff</color>
+	<color name="primaryVariantColor">#800052ff</color>
+	<color name="buttontextColor">#ffffff</color>
+	<color name="bgPrimaryColor">#ffffff</color>
+	<color name="call_quality_progressbar_background_tint">#0052ff</color>
+	<color name="branding_border_color">#000000</color>
+    <color name="branding_texfield_color">#000000</color>
+	<color name="waiting_time_background_color">#ffffff</color>
+	<color name="idnow_green">#0052ff</color>
+	<color name="idnow_colorAccent">#0052ff</color>
+	<color name="idnow_colorPrimaryDark">#0052ff</color>
+	<color name="vr_color_button">#0052ff</color>
+	<color name="waiting_screen_text_color">#333333</color>
+	<color name="idnow_color_tertiary">#0052ff</color>
+</resources>

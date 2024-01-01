@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="sms_wait_screen_page_indicator_weight">3</integer>
+    <integer name="sms_wait_screen_transparent_view_weight">63</integer>
+    <integer name="sms_wait_screen_view_pager_weight">34</integer>
+</resources>

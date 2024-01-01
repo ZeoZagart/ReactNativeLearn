@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        android:layout_width="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="64dp">
+
+
+    <FrameLayout
+        android:id="@+id/chatIconLayout"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignParentRight="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fab_chat_action_bg"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:src="@drawable/fab_chat_icon"/>
+
+        <ImageView android:id="@+id/chatButton"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"
+                   android:src="@drawable/ic_chat_black"/>
+    </FrameLayout>
+
+    <RelativeLayout android:id="@+id/chatIndicatorLayout"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="4dp"
+                    android:visibility="gone">
+
+        <ImageView android:layout_width="24dp"
+                   android:layout_height="24dp"
+                   android:src="@drawable/circle_filled"/>
+
+        <TextView android:id="@+id/indicatorTextView"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_centerInParent="true"
+                  android:textColor="@color/basicNavStepOff"/>
+    </RelativeLayout>
+</RelativeLayout>

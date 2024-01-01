@@ -1,0 +1,620 @@
+<FrameLayout android:id="@+id/parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="de.idnow.sdk.Activities.Activities_VideoOverviewCheckActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/checkScreenScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/activity_vertical_margin">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutCheckScreenIdentToken"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/checkScreenIdentTokenLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/second_step_token_text"
+                        android:textColor="@color/overview_screen_ident_token_text_color"/>
+
+                    <TextView
+                        android:id="@+id/checkScreenIdentToken"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/overview_screen_ident_token_text_color"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/second_step_intro_text"
+                    android:textColor="@color/overview_screen_intro_text_color"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/phoneNrContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/checkScreenMobileNumberHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/second_step_mobile_nr_title"
+                            android:textSize="18sp"
+                            android:textColor="@color/overview_screen_mobile_number_title_text_color"/>
+
+                        <EditText
+                            android:id="@+id/editTextPhoneNr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:hint="@string/second_step_mobile_nr_hint"
+                            android:inputType="phone"
+                            android:singleLine="true"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:text="@string/second_step_mobile_nr_text"
+                            android:textColor="@color/overview_screen_mobile_number_description_text_color"
+                            android:textSize="14sp"/>
+
+                        <View
+                            android:id="@+id/partialWidthLineOne"
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:background="@color/overview_screen_line_separator_background_color"
+                            android:visibility="visible"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:id="@+id/phoneNrCheckBoxContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:gravity="center_vertical|right">
+
+                        <ImageView
+                                android:id="@+id/imageViewMobileNr"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center_vertical|right"
+                                android:src="@drawable/oval_icon"
+                                android:visibility="gone"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                        android:id="@+id/wholeWidthLineOne"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:background="@color/overview_screen_line_separator_background_color"
+                        android:visibility="gone"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/emailContainer"
+                    android:layout_margin="8dp"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/emailCheckBlock"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/checkScreenEMailHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/second_step_email_title"
+                            android:textSize="18sp"
+                            android:textColor="@color/overview_screen_email_title_text_color"/>
+
+                        <EditText
+                            android:id="@+id/editTextEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:hint="@string/second_step_email_hint"
+                            android:inputType="textEmailAddress"
+                            android:singleLine="true"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:text="@string/second_step_email_text"
+                            android:textColor="@color/overview_screen_email_description_text_color"
+                            android:textSize="14sp"/>
+
+                        <View
+                            android:id="@+id/partialWidthLineTwo"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:background="@color/overview_screen_line_separator_background_color"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:gravity="center_vertical|right">
+
+                        <ImageView
+                                android:id="@+id/imageViewEmail"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center_vertical|right"
+                                android:src="@drawable/oval_icon"
+                                android:visibility="gone"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                        android:id="@+id/wholeWidthLineTwo"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:background="@color/overview_screen_line_separator_background_color"
+                        android:visibility="gone"/>
+
+                <LinearLayout
+                    android:id="@+id/linLayoutIdExplanation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/checkScreenDocumentDateLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/checkScreenDocumentDateHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/second_step_expiry_date"
+                            android:textSize="18sp"
+                            android:textColor="@color/overview_screen_document_expiry_date_title_text_color"
+                            android:visibility="visible"/>
+
+                        <EditText
+                            android:id="@+id/checkScreenDocumentDateText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:hint="@string/second_step_id_date_placeholder"
+                            android:singleLine="true"
+                            android:clickable="false"
+                            android:editable="false"
+                            android:cursorVisible="false"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/checkScreenDocumentDateTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="@dimen/activity_vertical_margin"
+                                android:text="@string/second_step_id_expiry_date_text"
+                                android:textSize="14sp"
+                                android:textColor="@color/overview_screen_document_expiry_date_description_text_color"/>
+                            <LinearLayout
+                                android:id="@+id/skipExpiryDateLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="8dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/checkScreenDocumentDateNotPresentTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/second_step_id_expiry_date_not_present"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/overview_screen_document_expiry_date_not_present_text_color"/>
+
+                                <ImageView
+                                    android:id="@+id/skipExpiryDateImageView"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:src="@drawable/oval_icon"/>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/partialWidthLineThreeDocument"
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:background="@color/overview_screen_line_separator_background_color"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/checkScreenDocumentLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/checkScreenDocumentHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/second_step_id_title"
+                            android:textSize="18sp"
+                            android:textColor="@color/overview_screen_document_title_text_color"/>
+
+                        <TextView
+                            android:id="@+id/checkScreenDocumentText"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/second_step_id_text"
+                            android:textSize="14sp"
+                            android:textColor="@color/overview_screen_document_description_text_color"/>
+
+                        <TextView
+                            android:id="@+id/textViewIdHelp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/second_step_id_help"
+                            android:textColor="@color/overview_screen_document_help_text_color"
+                            android:textSize="14sp"
+                            android:visibility="gone"/>
+
+                        <View
+                            android:id="@+id/partialWidthLineThreeDocumentDate"
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:background="@color/light_gray"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:gravity="center_vertical|right">
+
+                        <ImageView
+                                android:id="@+id/imageViewId"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center_vertical|right"
+                                android:src="@drawable/oval_icon"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                        android:id="@+id/wholeWidthLineThree"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:background="@color/overview_screen_line_separator_background_color"
+                        android:visibility="gone"/>
+
+                <LinearLayout
+                    android:id="@+id/linLayoutApprovalExplanation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/checkScreenConsentHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/second_step_approval_title"
+                            android:textSize="18sp"
+                            android:textColor="@color/overview_screen_recording_description_text_color"/>
+
+                        <TextView
+                            android:id="@+id/textViewTerms"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/second_step_approval_text"
+                            android:textSize="14sp"
+                            android:textColor="@color/overview_screen_recording_description_text_color"/>
+
+                        <TextView
+                            android:id="@+id/textViewTermsOfUse"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/second_step_terms_of_use"
+                            android:textSize="14sp"/>
+
+                        <TextView
+                            android:id="@+id/textViewPrivacyPolicy"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/second_step_privacy_policy"
+                            android:textSize="14sp"/>
+
+                        <TextView
+                            android:id="@+id/textViewApprovalHelp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/second_step_approval_help"
+                            android:textColor="@color/overview_screen_consent_approval_help_text_color"
+                            android:textSize="12sp"
+                            android:visibility="gone"/>
+
+                        <View
+                            android:id="@+id/partialWidthLineFour"
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:background="@color/overview_screen_line_separator_background_color"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:gravity="center_vertical|right">
+
+                        <ImageView
+                                android:id="@+id/imageViewApproval"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center_vertical|right"
+                                android:src="@drawable/oval_icon"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                        android:id="@+id/wholeWidthLineFour"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:background="@color/overview_screen_line_separator_background_color"
+                        android:visibility="gone"/>
+
+                <LinearLayout
+                    android:id="@+id/linLayoutRecordingAgreement"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/second_step_recording_title"
+                            android:textSize="18sp"
+                            android:textColor="@color/overview_screen_recording_title_text_color"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/second_step_recording_text"
+                            android:textSize="14sp"
+                            android:textColor="@color/overview_screen_recording_description_text_color"/>
+
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:background="@color/overview_screen_line_separator_background_color"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4"
+                            android:gravity="center_vertical|right">
+
+                        <ImageView
+                                android:id="@+id/imageViewRecording"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_gravity="center_vertical|right"
+                                android:src="@drawable/oval_icon"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/buttonNext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:text="@string/second_step_start_ident"
+                    android:textColor="@color/overview_screen_next_button_text_color"/>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/token_retries_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/idnow_di_20dp"
+        android:orientation="vertical">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/idnow_logo_retries_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/idnow_di_20dp"
+            android:layout_marginBottom="@dimen/idnow_di_20dp"
+            />
+
+        <TextView
+            android:id="@+id/token_retries_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="TITLE"
+            android:textSize="@dimen/vip_title"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/document_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/token_retries_buttons_layout"
+                android:layout_margin="@dimen/idnow_di_20dp"
+                android:layout_marginBottom="@dimen/idnow_di_15dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/token_retries_agent_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|center_horizontal"
+                    android:layout_weight="2" />
+
+                <TextView
+                    android:id="@+id/token_retries_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/idnow_di_10dp"
+                    android:layout_marginRight="@dimen/idnow_di_10dp"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="Message"
+                    android:textSize="@dimen/vip_text" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/token_retries_buttons_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="@dimen/idnow_di_20dp"
+                android:layout_marginRight="@dimen/idnow_di_20dp"
+                android:layout_marginBottom="@dimen/idnow_di_15dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/main_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Main Button"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/idnow_ts_18" />
+
+                <TextView
+                    android:id="@+id/secondary_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/idnow_di_20dp"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:textColor="@color/primaryColor"
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/vip_starting_progressBar"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@android:id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"/>
+
+</FrameLayout>

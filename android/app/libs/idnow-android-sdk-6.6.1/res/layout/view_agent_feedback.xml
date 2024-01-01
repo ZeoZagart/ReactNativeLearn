@@ -1,0 +1,359 @@
+<FrameLayout android:id="@+id/parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:descendantFocusability="beforeDescendants"
+    android:background="@color/bgPrimaryColor"
+    tools:context="de.idnow.sdk.Activities.Activities_VideoOverviewCheckActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/logo_screen_feedback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/idnow_di_20dp"
+                android:layout_marginBottom="@dimen/idnow_di_30dp"></com.airbnb.lottie.LottieAnimationView>
+
+            <TextView
+                android:id="@+id/feedback_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/idnow_di_30dp"
+                android:layout_marginRight="@dimen/idnow_di_30dp"
+                android:layout_marginBottom="@dimen/idnow_di_20dp"
+                android:gravity="center"
+                android:text="Rate your experience"
+                android:textColor="@color/primarytextColor"
+                android:textSize="@dimen/vip_title"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="2">
+            <LinearLayout
+                android:id="@+id/rateAgent_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/idnow_di_10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/feedback_description1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/idnow_di_20dp"
+                        android:text="@string/agent_feedback_desc"
+                        android:textColor="@color/primarytextColor"
+
+                        android:textSize="@dimen/idnow_ts_18"></TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/idnow_di_10dp"
+                    android:layout_marginLeft="@dimen/idnow_di_30dp"
+                    android:layout_marginTop="@dimen/idnow_di_20dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:weightSum="5"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/idnow_di_10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:gravity="center"
+                                android:layout_height="wrap_content">
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/feedback_very_bad_icon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:gravity="center"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:id="@+id/feedback_very_bad"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:singleLine="false"
+                                    android:text="@string/agent_feedback_very_bad"
+                                    android:textSize="12sp"
+                                    app:autoSizeTextType="uniform"
+                                    app:autoSizeMinTextSize="12sp"
+                                    app:autoSizeMaxTextSize="30sp"
+                                    android:gravity="center"
+                                    android:textColor="@color/primarytextColor"
+                                    >
+                                </TextView>
+                            </LinearLayout>
+
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/idnow_di_10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.airbnb.lottie.LottieAnimationView
+                                android:id="@+id/feedback_bad_icon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="test"
+                                android:visibility="invisible">
+
+                            </TextView>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/idnow_di_10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.airbnb.lottie.LottieAnimationView
+                                android:id="@+id/feedback_normal_icon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="">
+
+                            </TextView>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/idnow_di_10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.airbnb.lottie.LottieAnimationView
+                                android:id="@+id/feedback_good_icon"
+                                android:layout_width="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content"
+                                 />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="">
+
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:gravity="center"
+                                android:layout_height="wrap_content">
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/feedback_very_good_icon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_height="wrap_content"></com.airbnb.lottie.LottieAnimationView>
+                            </LinearLayout>
+
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:gravity="center"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:id="@+id/feedback_very_good"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:singleLine="false"
+                                    android:text="@string/agent_feedback_very_good"
+                                    android:textSize="12sp"
+                                    app:autoSizeTextType="uniform"
+                                    app:autoSizeMinTextSize="12sp"
+                                    app:autoSizeMaxTextSize="30sp"
+                                    android:gravity="center"
+                                    android:textColor="@color/primarytextColor"
+                                    >
+                                </TextView>
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/feedback_description2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/idnow_di_10dp"
+                        android:layout_marginBottom="@dimen/idnow_di_10dp"
+                        android:text="@string/agent_feedback_option"
+                        android:textColor="@color/primarytextColor"
+                        android:textSize="@dimen/idnow_ts_18">
+
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/feedback_text"
+                        android:padding="@dimen/idnow_di_10dp"
+                        android:background="@drawable/rounded_background_grey"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        >
+                    </EditText>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                    android:id="@+id/userAbort_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    android:orientation="vertical">
+                <TextView
+                    android:id="@+id/feedback_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/idnow_di_10dp"
+                    android:textSize="@dimen/idnow_di_16dp"
+                    android:text="@string/user_abort_feedback_desc"
+                    ></TextView>
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioGroup
+                    android:id="@+id/userAbort_radio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/idnow_di_10dp"
+                    android:layout_marginLeft="@dimen/idnow_di_10dp"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/idnow_di_5dp"
+                        android:layout_marginBottom="@dimen/idnow_di_5dp"
+                        android:background="#C9C6C4"/>
+
+
+
+
+
+
+
+                </RadioGroup>
+                </ScrollView>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/feedback_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/idnow_di_10dp"
+                android:layout_marginTop="@dimen/idnow_di_30dp"
+                android:layout_marginRight="@dimen/idnow_di_10dp"
+                android:layout_marginBottom="@dimen/idnow_di_10dp"
+                android:text="Send your feedback"
+                android:textAllCaps="false"
+                android:textColor="@color/buttontextColor"
+                android:textSize="@dimen/vip_text"></Button>
+
+            <TextView
+                android:id="@+id/feedback_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Not now"
+                android:gravity="center"
+                android:textColor="@color/primaryColor"
+                android:textSize="@dimen/idnow_ts_18"
+                android:textStyle="bold"></TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <ProgressBar
+        android:id="@android:id/progress"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"/>
+
+</FrameLayout>

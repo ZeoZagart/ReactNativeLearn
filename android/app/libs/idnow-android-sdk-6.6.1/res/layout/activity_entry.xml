@@ -1,0 +1,286 @@
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgPrimaryColor"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:id="@+id/idnowProgressBar"
+        android:layout_height="match_parent">
+
+        <de.idnow.sdk.util.UI_AnimationView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/idnow_di_10dp"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/image_description"
+            android:scaleType="fitEnd"
+            android:src="@drawable/logo0"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/progress_gif"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/idnow_di_10dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone">
+        </com.airbnb.lottie.LottieAnimationView>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/powered_by_idnow_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/idnow_di_10dp"
+            android:layout_gravity="bottom">
+
+        </com.airbnb.lottie.LottieAnimationView>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/idmethod_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:background="@color/bgPrimaryColor"
+
+        android:weightSum="4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/idnow_di_30dp"
+            android:orientation="vertical">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/used_logo_eid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/idnow_di_20dp">
+
+            </com.airbnb.lottie.LottieAnimationView>
+
+            <TextView
+                android:layout_marginTop="@dimen/idnow_di_20dp"
+                android:id="@+id/chooser_page_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_text_chooser_page"
+                android:gravity="center"
+                android:textColor="@color/eid_title"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/videoIdentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1.2"
+                android:weightSum="2"
+                android:orientation="vertical"
+                tools:ignore="NestedWeights">
+
+
+
+                <LinearLayout
+                    android:id="@+id/chooser_background_vi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/background_try"
+                    android:layout_weight="1.6"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2">
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:layout_gravity="center"
+                            android:id="@+id/videoidentAnimation"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/idnow_di_30dp"
+                            android:layout_weight="2"
+                            >
+
+                            <TextView
+                                android:id="@+id/chooser_page_vid_title"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/vi_title_text_chooser_page"
+                                android:textColor="@color/eid_text"
+                                android:textSize="20sp"
+                                android:textStyle="bold"></TextView>
+                            <TextView
+                                android:id="@+id/chooser_page_vid_desc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="18sp"
+                                android:textColor="@color/eid_text"
+                                android:text="@string/vi_desc_text_chooser_page">
+                            </TextView>
+                            <TextView
+                                android:id="@+id/chooser_page_vid_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:layout_gravity="left"
+                                android:textColor="@color/primaryColor"
+                                android:text="7 min">
+                            </TextView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:layout_marginRight="@dimen/idnow_di_20dp"
+                            >
+
+                            <com.airbnb.lottie.LottieAnimationView
+                                android:layout_marginTop="@dimen/idnow_di_30dp"
+                                android:id="@+id/arrow_chooser_vip"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                            </com.airbnb.lottie.LottieAnimationView>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/eidIdentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1.2"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/chooser_background_eid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_try"
+                    android:orientation="horizontal"
+                    android:layout_weight="1.6"
+                    android:weightSum="3">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        tools:ignore="NestedWeights">
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/eidAnimation"
+                            android:layout_width="0dp"
+                            android:layout_gravity="center"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/idnow_di_30dp"
+                            android:layout_weight="2"
+                            >
+                            <TextView
+                                android:id="@+id/chooser_page_eid_title"
+                                android:layout_width="match_parent"
+                                android:text="@string/eid_title_text_chooser_page"                            android:textSize="20sp"
+                                android:textColor="@color/eid_text"
+                                android:textStyle="bold"
+                                android:layout_height="wrap_content">
+                            </TextView>
+                            <TextView
+                                android:id="@+id/chooser_page_eid_desc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="18sp"
+                                android:textColor="@color/eid_text"
+                                android:text="@string/eid_desc_text_chooser_page">
+                            </TextView>
+                            <TextView
+                                android:id="@+id/chooser_page_eid_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:layout_gravity="left"
+                                android:textColor="@color/primaryColor"
+                                android:text="7 min">
+                            </TextView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:layout_marginRight="@dimen/idnow_di_20dp">
+                            <com.airbnb.lottie.LottieAnimationView
+                                android:id="@+id/arrow_chooser_eid"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="@dimen/idnow_di_30dp">
+                            </com.airbnb.lottie.LottieAnimationView>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

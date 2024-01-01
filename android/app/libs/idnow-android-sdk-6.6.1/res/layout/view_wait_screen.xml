@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_gravity="bottom"
+	android:weightSum="100"
+	android:gravity="bottom">
+
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:background="#00000000"
+		android:layout_weight="@integer/sms_wait_screen_transparent_view_weight"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="@integer/sms_wait_screen_view_pager_weight"
+		android:gravity="center"
+		android:layout_gravity="center">
+
+		<de.idnow.sdk.util.ViewPagerCustomDuration
+			android:id="@+id/waiting_screen_view_pager"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/waiting_screen_view_pager"/>
+
+	</LinearLayout>
+
+	<me.relex.circleindicator.CircleIndicator
+		android:id="@+id/waiting_screen_pager_indicator"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/waiting_screen_pager_indicator"
+		android:layout_weight="@integer/sms_wait_screen_page_indicator_weight"
+		app:ci_drawable_unselected="@drawable/view_pager_dot_unselected"
+		app:ci_drawable="@drawable/view_pager_dot_selected"
+		app:layout_constraintBottom_toBottomOf="parent"/>
+</LinearLayout>

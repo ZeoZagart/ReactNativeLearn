@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#4EB3B2"/>
+            <corners
+                android:radius="16px"
+                />
+            <solid android:color="#4EB3B2"
+                />
+            <stroke
+                android:width="2px"
+                android:color="#777777" />
+            <size
+                android:width="32dp"
+                android:height="32dp"></size>
+            <corners
+            android:radius="16px"
+            />
+            <solid android:color="#4EB3B2"
+                />
+            <stroke
+                android:width="2px"
+                android:color="#777777" />
+            <size
+                android:width="32dp"
+                android:height="32dp"></size>
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/check_icon"
+        android:gravity="center"
+        />
+</layer-list>

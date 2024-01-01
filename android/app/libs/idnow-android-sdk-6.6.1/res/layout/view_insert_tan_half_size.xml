@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background_white_trans"
+                android:layout_gravity="bottom"
+                android:orientation="vertical">
+
+    <TextView
+            android:id="@+id/textViewInsertTanHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textColor="@color/insert_tan_half_size_hint_text_color"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_above="@+id/textViewInsertTanHintCode"
+            />
+
+    <TextView
+            android:id="@+id/textViewInsertTanHintCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textColor="@color/insert_tan_half_size_hint_code_text_color"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_above="@+id/insertTanBottomLayout"
+            android:background="@drawable/rounded_corners_box"
+            />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/insertTanBottomLayout"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/buttonForgotTan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            android:textAllCaps="false"
+            android:text="@string/insert_tan_button_send_again"
+            android:textColor="@color/primaryColor"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/buttonSeparator"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@color/insert_tan_half_size_button_separator_color"/>
+
+        <Button
+            android:id="@+id/buttonAccept"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textAllCaps="false"
+            android:text="@string/insert_tan_accept"
+            android:textColor="@color/insert_tan_half_size_accept_btn_text_color"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/insertTanBottomLayout"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textEnterIdentCode"
+            android:layout_width="match_parent"
+            android:layout_marginTop="24dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/insert_tan_title"
+            android:textColor="@color/primaryColor"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/textViewRetrieveTanInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/insert_tan_text_sms"
+            android:textSize="18sp"
+            android:textColor="@color/primarytextColor"/>
+
+        <EditText
+            android:id="@+id/editTextInsertTan"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:padding="@dimen/idnow_di_5dp"
+            android:textColor="@color/insert_tan_text_sms_color"
+            android:textColorHint="@color/insert_tan_hint_code_text_color"
+            android:background="@color/bgSecondaryColor"
+            android:hint="@string/insert_tan_hint_enter_code"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textViewForgotTan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/insert_tan_forgot_tan"
+            android:textSize="16sp"
+            android:textColor="@color/primarytextColor"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

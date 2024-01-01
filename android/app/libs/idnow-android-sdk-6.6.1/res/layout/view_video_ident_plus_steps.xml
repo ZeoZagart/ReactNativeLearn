@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/idnow_di_10dp"
+    android:background="@drawable/bg_steps_vip">
+
+        <LinearLayout
+            android:id="@+id/agent_steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:visibility="visible"
+            android:layout_margin="@dimen/idnow_di_10dp"
+            android:orientation="horizontal">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/circleCheck1_steps"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+            </com.airbnb.lottie.LottieAnimationView>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/circleCheck2_steps"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+            </com.airbnb.lottie.LottieAnimationView>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/circleCheck3_steps"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+            </com.airbnb.lottie.LottieAnimationView>
+
+            <LinearLayout
+                android:id="@+id/status_layout"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginRight="@dimen/idnow_di_10dp"
+                android:background="@drawable/rounded_layout_take_picture"
+                android:layout_marginLeft="5dp"
+                >
+
+                <TextView
+                    android:id="@+id/num_text_steps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/idnow_di_5dp"
+                    android:layout_marginTop="@dimen/idnow_di_5dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/right_side_border"
+                    android:text=" "
+                    android:textSize="20sp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/idcard_text_steps"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/idcard_text_steps"
+                    android:layout_marginLeft="@dimen/idnow_di_5dp"
+                    android:autoSizeTextType="uniform"
+                    android:textColor="@color/primarytextColor"
+                    android:textStyle="bold"></TextView>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/agent_normal_steps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_agent_title_normal"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:visibility="visible"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="@dimen/idnow_di_10dp">
+            <TextView
+                android:id="@+id/idcard_text_normal_steps"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/idnow_di_5dp"
+                android:layout_marginRight="@dimen/idnow_di_5dp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="25sp"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="@color/primarytextColor"
+                android:textStyle="bold"></TextView>
+        </LinearLayout>
+
+</LinearLayout>

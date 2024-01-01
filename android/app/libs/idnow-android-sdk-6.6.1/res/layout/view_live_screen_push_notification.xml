@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<de.idnow.sdk.views.AnimationAverseLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:animateLayoutChanges="false"
+    android:background="@color/live_screen_push_notif_background_color"
+    android:orientation="vertical">
+
+    <RelativeLayout
+            android:id="@+id/notifyViaPushUpperPanel"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:minHeight="150dp"
+            android:orientation="horizontal">
+
+        <LinearLayout
+                android:id="@+id/notifyTextContainerLayout"
+                android:layout_width="280dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/notifyViaPushTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:maxLines="3"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="4dp"
+                    android:text="@string/sms_stage1_title"
+                    android:textColor="@color/live_screen_push_notif_title_text_color"
+                    android:textSize="20sp" />
+
+            <TextView
+                    android:id="@+id/notifyViaPushContent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:padding="8dp"
+                    android:text="@string/sms_stage1_details"
+                    android:textSize="14sp"
+                    android:textColor="@color/live_screen_push_notif_content_text_color"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_toRightOf="@+id/notifyTextContainerLayout"
+                android:layout_width="80dp"
+                android:minWidth="80dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+            <Button
+                    android:id="@+id/notifyViaPushOKButton"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/headline"
+                    android:layout_alignParentEnd="true"
+                    android:padding="8dp"
+                    android:text="OK"
+                    android:textColor="@color/live_screen_push_notif_ok_btn_text_color"
+                    android:visibility="visible"
+                    android:layout_alignParentRight="true" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:id="@+id/notifyViaPushLowerPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="150dp"
+            android:visibility="gone">
+
+        <TextView
+                android:id="@+id/notifyViaPushLowerPanelTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="32dp"
+                android:paddingTop="4dp"
+                android:text="@string/sms_stage2_title"
+                android:textColor="@color/live_screen_push_notif_lower_panel_title_text_color"
+                android:textSize="20sp"
+                android:visibility="gone" />
+
+        <TextView
+                android:id="@+id/notifyViaPushDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/notifyViaPushLowerPanelTitle"
+                android:padding="9dp"
+                android:text="@string/sms_stage2_details"
+                android:textColor="@color/live_screen_push_notif_lower_panel_details_text_color"/>
+
+        <Button
+            android:id="@+id/notifyViaPushSend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/notifyViaPushDetails"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="-1dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/headline"
+            android:padding="5dp"
+            android:text="@string/sms_requestpushbutton_title"
+            android:textColor="@color/live_screen_push_notif_lower_panel_send_btn_text_color" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/notifyViaSMSPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/sms_wait_screen_padding_top"
+        android:paddingStart="@dimen/sms_wait_screen_padding_start"
+        android:paddingEnd="@dimen/sms_wait_screen_padding_end"
+        android:paddingBottom="@dimen/sms_wait_screen_padding_bottom">
+
+        <TextView
+            android:id="@+id/wait_screen_sms_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/sms_wait_screen_title_margin_top"
+            android:layout_marginBottom="@dimen/sms_wait_screen_title_margin_bottom"
+            android:textColor="@color/wait_screen_sms_title_text_color"
+            android:textSize="@dimen/sms_wait_screen_title_text_size"
+            tools:text="@string/waiting_screen_title_waiting_list"/>
+
+        <TextView
+            android:id="@+id/wait_screen_busy_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/wait_screen_sms_title_text_color"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/sms_wait_screen_queue_info_margin_top"
+            android:layout_marginBottom="@dimen/sms_wait_screen_queue_info_margin_bottom"
+            android:textSize="@dimen/sms_wait_screen_queue_info_text_size"
+            tools:text="@string/waiting_screen4_description"/>
+
+        <TextView
+            android:id="@+id/wait_screen_sms_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/sms_wait_screen_description_margin_top"
+            android:layout_marginBottom="@dimen/sms_wait_screen_description_margin_bottom"
+            android:textColor="@color/wait_screen_sms_description_text_color"
+            android:textSize="@dimen/sms_wait_screen_description_text_size"
+            tools:text="@string/push_stage1_details"/>
+
+        <EditText
+            android:id="@+id/wait_screen_sms_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sms_wait_screen_edit_text_margin_top"
+            android:layout_marginBottom="@dimen/sms_wait_screen_edit_text_margin_bottom"
+            android:inputType="phone"
+            tools:hint="+4917610305432"/>
+
+        <Button
+            android:id="@+id/wait_screen_sms_notify_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:layout_marginBottom="@dimen/sms_wait_screen_notify_btn_margin_bottom"
+            tools:text="@string/waiting_screen_action_notify_sms"/>
+
+        <Button
+            android:id="@+id/wait_screen_sms_wait_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:layout_marginTop="@dimen/sms_wait_screen_wait_btn_margin_top"
+            android:layout_marginBottom="@dimen/sms_wait_screen_wait_btn_margin_bottom"
+            android:visibility="gone"
+            tools:text="@string/waiting_screen_action_ok_wait"/>
+
+<!--        <de.idnow.sdk.util.ClickableTextView-->
+<!--            android:id="@+id/wait_screen_sms_clickable_text"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_marginTop="@dimen/sms_wait_screen_clickable_text_view_margin_top"-->
+<!--            android:textSize="@dimen/sms_wait_screen_clickable_text_view_text_size"-->
+<!--            android:textColor="@color/wait_screen_sms_clickable_text_color"-->
+<!--            android:clickable="true"-->
+<!--            android:focusable="true"-->
+<!--            tools:text="@string/waiting_screen_action_no_wait"/>-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/confirmation_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/sms_wait_screen_padding_top"
+        android:paddingStart="@dimen/sms_wait_screen_padding_start"
+        android:paddingEnd="@dimen/sms_wait_screen_padding_end"
+        android:paddingBottom="@dimen/sms_wait_screen_padding_bottom">
+
+        <TextView
+            android:id="@+id/wait_screen_sms_confirmation_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/sms_wait_screen_title_margin_top"
+            android:layout_marginBottom="@dimen/sms_wait_screen_title_margin_bottom"
+            android:textColor="@color/wait_screen_sms_title_text_color"
+            android:textSize="@dimen/sms_wait_screen_title_text_size"
+            tools:text="@string/waiting_screen_title_waiting_list_confirm"/>
+
+        <TextView
+            android:id="@+id/wait_screen_sms_confirmation_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/sms_wait_screen_description_margin_top"
+            android:layout_marginBottom="@dimen/sms_wait_screen_description_margin_bottom"
+            android:textColor="@color/wait_screen_sms_description_text_color"
+            android:textSize="@dimen/sms_wait_screen_description_text_size"
+            tools:text="@string/waiting_list_description"/>
+
+        <Button
+            android:id="@+id/wait_screen_sms_confirmation_done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:layout_marginBottom="@dimen/sms_wait_screen_notify_btn_margin_bottom"
+            tools:text="@string/result_screen_button_done"/>
+
+    </LinearLayout>
+
+</de.idnow.sdk.views.AnimationAverseLinearLayout>

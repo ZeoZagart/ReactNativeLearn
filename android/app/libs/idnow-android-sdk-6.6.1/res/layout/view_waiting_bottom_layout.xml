@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rounded_corner_white_background"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/animationWLtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/idnow_di_10dp"
+        android:layout_marginRight="@dimen/idnow_di_40dp"
+        android:layout_marginLeft="@dimen/idnow_di_40dp"
+        android:layout_marginBottom="@dimen/idnow_di_10dp"
+        android:gravity="center"
+        android:textSize="16dp"
+        android:text="@string/waiting_screen_headline"
+        android:textColor="@color/waiting_screen_text_color"></TextView>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationWaitingL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+    </com.airbnb.lottie.LottieAnimationView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dontleave_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/idnow_di_20dp"
+            android:layout_marginRight="@dimen/idnow_di_10dp"
+            android:layout_marginLeft="@dimen/idnow_di_10dp"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="@string/dont_leave">
+        </TextView>
+
+        <LinearLayout
+            android:id="@+id/estimation_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="@dimen/idnow_di_10dp"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/idnow_di_30dp"
+            android:layout_marginLeft="@dimen/idnow_di_30dp"
+            android:background="@drawable/background_square_grey"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/waiting_estimated_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/waiting_screen_text_color"
+                android:text="@string/waiting_estimated_text"/>
+            <TextView
+                android:id="@+id/countdowntimertext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="@dimen/idnow_di_10dp"
+                android:paddingLeft="5dp"
+                android:textStyle="bold"
+                android:textColor="@color/waiting_screen_text_color"
+                android:text=": 05:55">
+        </TextView>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/waiting_screen_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="@dimen/idnow_di_20dp"
+            android:layout_marginRight="@dimen/idnow_di_20dp"
+            android:textColor="@color/waiting_screen_text_color"
+            android:textSize="16dp"
+            android:text="@string/waiting_screen_desc">
+        </TextView>
+        <Button
+            android:id="@+id/waiting_screen_yes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/idnow_di_10dp"
+            android:textColor="@color/buttontextColor"
+            android:textAllCaps="false"
+            android:background="@drawable/rounded_background_orange"
+            android:text="@string/keep_waiting">
+
+        </Button>
+
+        <TextView
+            android:id="@+id/waiting_screen_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/primaryColor"
+            android:layout_marginBottom="@dimen/idnow_di_10dp"
+            android:text="@string/come_back_later">
+        </TextView>
+    </LinearLayout>
+
+</LinearLayout>

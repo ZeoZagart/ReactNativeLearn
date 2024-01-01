@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/takePhotoLayoutScreen"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+
+    <SurfaceView
+        android:id="@+id/surfaceview_takePhoto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"></SurfaceView>
+    <ImageView
+        android:id="@+id/imageViewPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true" />
+    <FrameLayout
+        android:id="@+id/mainlayoutFrame"
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:layout_height="match_parent"
+        android:background="@color/background_white_trans"
+        android:focusableInTouchMode="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false">
+
+            <RelativeLayout
+                android:id="@+id/explanationContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/bgPrimaryColor">
+
+                <FrameLayout
+                    android:id="@+id/frameLayoutDescription"
+                    android:layout_width="match_parent"
+                    android:background="@color/bgPrimaryColor"
+                    android:layout_height="wrap_content">
+
+                    <View
+                        android:id="@+id/dividerView"
+                        android:layout_width="1dp"
+                        android:layout_height="160dp"
+                        android:layout_gravity="right|center_vertical"
+                        android:background="@color/photo_ident_retake_button_background"/>
+
+                    <include
+                        android:id="@+id/view_complete_identification"
+                        layout="@layout/view_complete_identification"
+                        android:visibility="gone"/>
+
+                    <include
+                        android:id="@+id/view_complete_esign"
+                        layout="@layout/view_complete_esign"
+                        android:visibility="gone"/>
+
+                    <include
+                        android:id="@+id/view_explanation"
+                        layout="@layout/view_live_screen_explanation"
+                        android:visibility="visible"
+                       >
+                    </include>
+                </FrameLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/aboveExplanationContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/explanationContainer">
+
+                <RelativeLayout
+                    android:id="@+id/publisherView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+                <LinearLayout
+                    android:id="@+id/helperImageContainer"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/id_frame_dashed"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/poweredByView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/powered_by_idnow"
+                        android:textColor="@color/light_gray"/>
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/icon_powered_by"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/connecting_with_agent_text"
+                    android:layout_width="238dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="@dimen/idnow_di_20dp"
+                    android:layout_marginTop="@dimen/idnow_di_20dp"
+                    android:visibility="gone"
+                    android:layout_marginEnd="@dimen/idnow_di_20dp"
+                    android:layout_marginBottom="@dimen/idnow_di_20dp"
+                    android:text="@string/connecting_with_an_ident_specialist"
+                    android:textColor="#464f5b"
+                    android:textSize="25dp">
+
+                </TextView>
+
+                <FrameLayout android:id="@+id/subscriberLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="16dp"
+                    android:padding="@dimen/video_subscriber_border_width">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/spinnerWA"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        ></com.airbnb.lottie.LottieAnimationView>
+
+                    <RelativeLayout
+                        android:id="@+id/subscriberContainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_background_agent">
+
+                        <RelativeLayout
+                            android:id="@+id/subscriberView"
+                            android:layout_width="120dp"
+                            android:layout_height="160dp"
+                            android:visibility="visible">
+
+                            <ProgressBar
+                                android:id="@+id/loadingSpinner"
+                                style="?android:attr/progressBarStyleLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center_vertical|center_horizontal"
+                                android:indeterminateTint="@color/primaryColor"
+                                android:visibility="gone" />
+
+                            <RelativeLayout
+                                android:id="@+id/audioOnlyView"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_alignParentBottom="true"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:id="@+id/noVideo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@+id/avatar"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="28dp"
+                                    android:src="@drawable/no_video" />
+
+                                <ImageView
+                                    android:id="@+id/avatar"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:src="@drawable/avatar" />
+                            </RelativeLayout>
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/video_signing_mask"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@id/subscriberLayout"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/video_signing_mask"
+                    android:visibility="gone"
+                    tools:ignore="ContentDescription"/>
+            </RelativeLayout>
+
+            <RelativeLayout android:id="@+id/buttonHolderBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/explanationContainer">
+                <include
+                    android:id="@+id/chatButtonHolder"
+                    layout="@layout/view_chat_overlay_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/notifyViaPushSuccessLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@color/bgPrimaryColor"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/notifyViaPushSuccessText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+                android:padding="9dp"
+                android:textColor="@color/live_stream_notify_via_push_success_text_color"
+                android:text="@string/result_success_detail_smsnotification">
+            </TextView>
+
+            <Button
+                android:id="@+id/notifyViaPushSuccessBackButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/notifyViaPushSuccessText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:text="@string/result_success_home_button"
+                />
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/eSignatureOverlay"
+            layout="@layout/view_overlay"
+            android:visibility="gone"/>
+
+        <include
+            android:id="@+id/view_retrieve_tan"
+            layout="@layout/view_retrieve_tan"
+            android:visibility="gone"/>
+
+        <include
+            android:id="@+id/view_retrieve_tan_half_size"
+            layout="@layout/view_retrieve_tan_half_size"
+            android:visibility="gone"/>
+
+        <include
+            android:id="@+id/view_insert_tan"
+            layout="@layout/view_insert_tan"
+            android:visibility="gone"/>
+
+        <include
+            android:id="@+id/view_insert_tan_half_size"
+            layout="@layout/view_insert_tan_half_size"
+            android:visibility="gone"/>
+
+        <include
+            android:id="@+id/chatLayout"
+            layout="@layout/view_chat_overlay"
+            android:visibility="gone"/>
+
+        <RelativeLayout android:id="@+id/buttonHolderTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"/>
+
+        <ProgressBar
+            android:id="@+id/progressBarLoading"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/primaryColor"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:visibility="visible"/>
+    </FrameLayout>
+    <include
+        android:id="@+id/video_ident_plus_layout"
+        layout="@layout/view_video_ident_plus"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+    <include
+        android:id="@+id/video_ident_plus_layout_waiting_list"
+        layout="@layout/view_waiting_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        ></include>
+    <include
+        android:id="@+id/video_ident_plus_layout_retry_flow"
+        layout="@layout/view_retry_flow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        ></include>
+    <include
+        android:id="@+id/video_select_document_layout"
+        layout="@layout/view_select_document"
+        android:visibility="gone"/>
+    <include
+        android:id="@+id/user_abort_feedback_view"
+        layout="@layout/view_agent_feedback"
+        android:visibility="gone">
+
+    </include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/idnow_di_80dp"
+        android:gravity="bottom">
+
+        <include
+            android:id="@+id/video_ident_steps_layout"
+            layout="@layout/view_video_ident_plus_steps"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</RelativeLayout>

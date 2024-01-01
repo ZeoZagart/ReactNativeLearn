@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/callQualityCheckMainLayout"
+    android:background="@color/bgPrimaryColor"
+    tools:context="de.idnow.sdk.Activities.Activities_VideoLiveStreamActivity_CallQualityCheck"
+    android:visibility="visible">
+
+<RelativeLayout
+    android:id="@+id/old_cqc"
+    android:layout_width="match_parent"
+    android:background="@color/bgPrimaryColor"
+    android:layout_height="match_parent"
+    android:visibility="visible">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/callQualityCheckSubscriberView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center_horizontal">
+
+                    <ProgressBar
+                        android:id="@+id/callQualityLoadingSpinner"
+                        style="?android:attr/progressBarStyleLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:indeterminate="false"
+                        android:visibility="gone" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/callQualityPublisherView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/callQualityActiveView"
+                android:background="@color/bgPrimaryColor"
+                android:visibility="visible" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bgPrimaryColor" />
+
+        <RelativeLayout
+            android:id="@+id/callQualityCheckRunningLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/callQualityTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/callQualitySubscriberBar"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:text="Connection"
+                android:textColor="@color/call_quality_title_text_color" />
+
+            <ProgressBar
+                android:id="@+id/callQualitySubscriberBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_above="@+id/callQualityProgressText"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="50dp"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/call_quality_progressbar_progress_tint"
+                android:progressBackgroundTint="@color/call_quality_progressbar_background_tint"
+                android:progressTint="@color/call_quality_progressbar_progress_tint"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/callQualityProgressText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/callQualityCheckLabelLayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20pt"
+                android:text=""
+                android:textColor="@color/call_quality_progress_text_color"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/callQualityCheckLabelLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/callQualityCheckBandwidthLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_marginBottom="20pt"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/callQualityImageBandwidth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_network_check_black_36dp"
+                        android:tint="@color/call_quality_check_bandwidth_icon_color" />
+
+                    <TextView
+                        android:id="@+id/callQualityCheckBandwidthLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:textColor="@color/call_quality_check_bandwidth_text_color"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/callQualityCheckAudioLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_marginBottom="20pt"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/callQualityImageAudio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_mic_black_36dp"
+                        android:tint="@color/call_quality_check_audio_icon_color" />
+
+                    <TextView
+                        android:id="@+id/callQualityCheckAudioLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:textColor="@color/call_quality_check_audio_text_color"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/callQualityCheckVideoLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_marginBottom="20pt"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/callQualityImageVideo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_videocam_black_36dp"
+                        android:tint="@color/call_quality_check_video_icon_color" />
+
+                    <TextView
+                        android:id="@+id/callQualityCheckVideoLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:textColor="@color/call_quality_check_video_text_color"
+                        android:visibility="visible" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <de.idnow.sdk.views.LockableScrollView
+            android:id="@+id/callQualityCheckScollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/callQualityCheckResultLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/callQualityResultText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8pt"
+                    android:layout_marginTop="20pt"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/call_quality_result_text_color" />
+
+                <LinearLayout
+                    android:id="@+id/callQualityLights"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <de.idnow.sdk.views.CallQualityLightView
+                        android:id="@+id/callQualityLightOne"
+                        android:layout_width="30pt"
+                        android:layout_height="30pt"
+                        android:layout_margin="2pt" />
+
+                    <de.idnow.sdk.views.CallQualityLightView
+                        android:id="@+id/callQualityLightTwo"
+                        android:layout_width="30pt"
+                        android:layout_height="30pt"
+                        android:layout_margin="2pt" />
+
+                    <de.idnow.sdk.views.CallQualityLightView
+                        android:id="@+id/callQualityLightThree"
+                        android:layout_width="30pt"
+                        android:layout_height="30pt"
+                        android:layout_margin="2pt" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/callQualityRetryLink"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/call_quality_retry_link_text_color"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/callQualitySuggestionBoxContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/suggestions_box"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/callQualitySuggestionBox1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/suggestions_box"
+                        android:backgroundTint="@color/call_quality_suggestion_boxes_background_tint_color"
+                        android:textColor="@color/call_quality_suggestion_boxes_text_color"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/callQualitySuggestionBox2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/suggestions_box"
+                        android:backgroundTint="@color/call_quality_suggestion_boxes_background_tint_color"
+                        android:textColor="@color/call_quality_suggestion_boxes_text_color"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/callQualitySuggestionBox3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/suggestions_box"
+                        android:backgroundTint="@color/call_quality_suggestion_boxes_background_tint_color"
+                        android:textColor="@color/call_quality_suggestion_boxes_text_color"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/callQualitySuggestionBox4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/suggestions_box"
+                        android:backgroundTint="@color/call_quality_suggestion_boxes_background_tint_color"
+                        android:textColor="@color/call_quality_suggestion_boxes_text_color"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/callQualitySuggestionBox5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/suggestions_box"
+                        android:backgroundTint="@color/call_quality_suggestion_boxes_background_tint_color"
+                        android:textColor="@color/call_quality_suggestion_boxes_text_color"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/callQualitySuggestionBox6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/suggestions_box"
+                        android:backgroundTint="@color/call_quality_suggestion_boxes_background_tint_color"
+                        android:textColor="@color/call_quality_suggestion_boxes_text_color"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/callQualitySuggestionBox7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/suggestions_box"
+                        android:backgroundTint="@color/call_quality_suggestion_boxes_background_tint_color"
+                        android:textColor="@color/call_quality_suggestion_boxes_text_color"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/callQualitySuggestionBox8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/suggestions_box"
+                        android:backgroundTint="@color/call_quality_suggestion_boxes_background_tint_color"
+                        android:textColor="@color/call_quality_suggestion_boxes_text_color"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/callQualitySuggestionBox9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/suggestions_box"
+                        android:backgroundTint="@color/call_quality_suggestion_boxes_background_tint_color"
+                        android:textColor="@color/call_quality_suggestion_boxes_text_color"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/callQualitySuggestionBox10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/suggestions_box"
+                        android:backgroundTint="@color/call_quality_suggestion_boxes_background_tint_color"
+                        android:textColor="@color/call_quality_suggestion_boxes_text_color"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/callQualityResultButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:textAllCaps="false"
+                    android:layout_marginRight="8dp"
+                    android:background="@color/call_quality_result_btn_background_color"
+                    android:textColor="@color/call_quality_result_btn_text_color" />
+            </LinearLayout>
+        </de.idnow.sdk.views.LockableScrollView>
+
+        <LinearLayout
+            android:id="@+id/linearlayoutAfterCQC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="469dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Test fehlgeschlagen"
+                    android:textColor="@color/call_quality_unknown_result_title_text_color"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Leider ist Ihre Verbindungsqualität nicht ausreichend. Bitte versuchen Sie diese mit Hilfe der folgenden Hinweise zu verbessern."
+                    android:textColor="@color/call_quality_unknown_result_description_text_color" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@color/cqc_box_background_suggestions_box">
+
+                    <TableLayout
+                        android:id="@+id/tableLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/point1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:padding="@dimen/idnow_di_5dp"
+                                android:text="@string/filled_bullet"
+                                android:textSize="5sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/description1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:layout_marginStart="@dimen/idnow_di_15dp"
+                                android:text="Stellen Sie sicher, dass Sie mit dem Internet verbunden sind." />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/point2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:padding="@dimen/idnow_di_5dp"
+                                android:text="@string/filled_bullet"
+                                android:textSize="5sp" />
+
+                            <TextView
+                                android:id="@+id/description2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:layout_marginStart="@dimen/idnow_di_15dp"
+                                android:text="Stellen Sie sicher, dass Sie mit dem Internet verbunden sind." />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/point3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:padding="@dimen/idnow_di_5dp"
+                                android:text="@string/filled_bullet"
+                                android:textSize="5sp" />
+
+                            <TextView
+                                android:id="@+id/description3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:layout_marginStart="@dimen/idnow_di_15dp"
+                                android:text="Stellen Sie sicher, dass Sie mit dem Internet verbunden sind." />
+                        </TableRow>
+                    </TableLayout>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/retrycqc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:textAllCaps="false"
+                    android:background="@drawable/button_border_cqc"
+                    android:text="Button"
+                    android:textColor="@color/call_quality_unknown_result_retry_btn_text_color" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <View
+                    android:id="@+id/linedivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/call_quality_unknown_result_line_divider_color" />
+
+                <Button
+                    android:id="@+id/startident"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="15dp"
+                    android:textAllCaps="false"
+                    android:background="@color/call_quality_unknown_result_start_ident_btn_color"
+                    android:text="Button"
+                    android:textColor="@color/call_quality_unknown_result_start_ident_btn_text_color" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/new_cqc"
+        android:background="@color/bgPrimaryColor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+        <ScrollView
+            android:id="@+id/call_quality_check_vip"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/good_internet_connection"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/idnow_di_20dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/used_logo_cqc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"></com.airbnb.lottie.LottieAnimationView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/idnow_di_20dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/status_image_good"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/loaderSpinner"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"></com.airbnb.lottie.LottieAnimationView>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/idnow_di_20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/connection_vip_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/idnow_di_30dp"
+                            android:gravity="center"
+                            android:text="@string/connection_vip_title"
+                            android:textSize="20sp"
+                            android:textStyle="bold"></TextView>
+
+                        <TextView
+                            android:id="@+id/connection_vip_desc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/idnow_di_20dp"
+                            android:layout_marginRight="@dimen/idnow_di_20dp"
+                            android:layout_marginBottom="@dimen/idnow_di_20dp"
+                            android:gravity="center"
+                            android:text="@string/connection_vip_desc"
+                            android:textSize="16sp"></TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/idnow_di_15dp"
+                            android:orientation="horizontal">
+
+                            <com.airbnb.lottie.LottieAnimationView
+                                android:id="@+id/callQualityImageBandwidth_vip"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/icon_loading">
+
+                            </com.airbnb.lottie.LottieAnimationView>
+
+                            <TextView
+                                android:id="@+id/connection_vip_good_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/idnow_di_15dp"
+                                android:text="@string/connection_vip_good_1"
+                                android:textSize="16sp">
+
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/idnow_di_15dp"
+                            android:orientation="horizontal">
+
+                            <com.airbnb.lottie.LottieAnimationView
+                                android:id="@+id/callQualityImageAudio_vip"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/icon_loading">
+
+                            </com.airbnb.lottie.LottieAnimationView>
+
+                            <TextView
+                                android:id="@+id/connection_vip_good_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/idnow_di_15dp"
+                                android:text="@string/connection_vip_good_2"
+                                android:textSize="16sp">
+
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/idnow_di_30dp"
+                            android:orientation="horizontal">
+
+                            <com.airbnb.lottie.LottieAnimationView
+                                android:id="@+id/callQualityImageVideo_vip"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/icon_loading">
+
+                            </com.airbnb.lottie.LottieAnimationView>
+
+                            <TextView
+                                android:id="@+id/connection_vip_good_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="@dimen/idnow_di_15dp"
+                                android:text="@string/connection_vip_good_3"
+                                android:textSize="16sp">
+
+                            </TextView>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/token_retries_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/idnow_di_20dp"
+        android:background="@color/bgPrimaryColor"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/idnow_logo_retries_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/idnow_di_20dp"
+            android:layout_marginBottom="@dimen/idnow_di_20dp" />
+
+        <TextView
+            android:id="@+id/token_retries_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="TITLE"
+            android:textColor="@color/primarytextColor"
+            android:textSize="@dimen/vip_title"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/document_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/token_retries_buttons_layout"
+                android:layout_margin="@dimen/idnow_di_20dp"
+                android:layout_marginBottom="@dimen/idnow_di_15dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/token_retries_agent_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|center_horizontal"
+                    android:layout_weight="2" />
+
+                <TextView
+                    android:id="@+id/token_retries_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/idnow_di_10dp"
+                    android:layout_marginRight="@dimen/idnow_di_10dp"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="Message"
+                    android:textColor="@color/primarytextColor"
+                    android:textSize="@dimen/vip_text" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/token_retries_buttons_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="@dimen/idnow_di_20dp"
+                android:layout_marginRight="@dimen/idnow_di_20dp"
+                android:layout_marginBottom="@dimen/idnow_di_15dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/main_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Main Button"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/idnow_ts_18" />
+
+                <TextView
+                    android:id="@+id/secondary_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/idnow_di_20dp"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <ProgressBar
+        android:id="@android:id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:visibility="gone" />
+</FrameLayout>

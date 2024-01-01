@@ -1,0 +1,141 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:weightSum="3"
+    android:background="@color/bgPrimaryColor"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="1.5"
+        >
+
+        <Button
+            android:id="@+id/showContractTextViewLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="6dp"
+            android:layout_gravity="left"
+            android:background="@color/bgSecondaryColor"
+            android:drawableLeft="@drawable/action_show_contract"
+            android:drawablePadding="4dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/e_signature_check_contract"
+            android:textColor="@color/primarytextColor"/>
+
+        <TextView
+            android:id="@+id/headlineAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Account Login"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/primarytextColor"/>
+        <TextView
+            android:id="@+id/instructionAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="IDnow email address and password associated with your account"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/primarytextColor"/>
+        <TextView
+            android:id="@+id/hintAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please enter the email address and password you chose during your initial video identification."
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/primarytextColor"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1.2"
+        >
+
+        <EditText
+            android:id="@+id/emailAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:inputType="textEmailAddress"
+            android:background="@color/bgSecondaryColor"
+            android:textColor="@color/basicInputField"
+            android:text=""
+            android:maxLines="1"
+            android:layout_marginBottom="20dp"
+            />
+
+        <EditText
+            android:id="@+id/passwordAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:padding="15dp"
+            android:inputType="textPassword"
+            android:textColorHint="@color/basicInputField"
+            android:textColor="@color/basicInputField"
+            android:background="@color/bgSecondaryColor"
+            android:password="true"
+            android:maxLines="1"
+            android:text=""/>
+
+        <TextView
+            android:id="@+id/cantRemember"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Can't remember the password?"
+            android:textColor="@color/primaryColor"
+            android:layout_marginBottom="20dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/abortAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:background="@color/bgSecondaryColor"
+                android:padding="5dp"
+                android:textAllCaps="false"
+                android:textColor="@color/buttontextColor"
+                android:text="Cancel" />
+
+            <Button
+                android:id="@+id/confirmAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textAllCaps="false"
+                android:background="@color/bgSecondaryColor"
+                android:textColor="@color/buttontextColor"
+                android:padding="5dp"
+                android:text="Confirm" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

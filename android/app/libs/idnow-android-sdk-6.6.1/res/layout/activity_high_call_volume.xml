@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/high_call_volume_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/idnow_di_25dp"
+    android:paddingEnd="@dimen/idnow_di_25dp">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/idnow_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/idnow_di_40dp"
+        android:layout_weight="1"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center_horizontal"
+        android:layout_weight="1"
+        android:scaleType="fitCenter"
+        android:src="@drawable/graph_calltimes" />
+
+    <TextView
+        android:id="@+id/high_call_volume_image_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:gravity="center_vertical|top"
+        android:text="Call volume by hour (CET berlin)"
+        android:textColor="@color/basicInputField"
+        android:textSize="@dimen/idnow_di_12dp" />
+
+    <TextView
+        android:id="@+id/high_call_volume_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:text="We are currently experiencing extremely high call volume"
+        android:textColor="@color/primarytextColor"
+        android:textSize="@dimen/vip_title"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/high_call_volume_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:text="Please try later in less busy (green) timeslots for the best connection."
+        android:textColor="@color/basicInputField"
+        android:textSize="@dimen/vip_text" />
+
+    <TextView
+        android:id="@+id/try_later_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_background_orange"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="Try again"
+        android:textColor="@color/white"
+        android:textSize="@dimen/idnow_ts_18" />
+
+    <TextView
+        android:id="@+id/continue_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/idnow_di_20dp"
+        android:layout_marginBottom="@dimen/idnow_di_35dp"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="Continue"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/idnow_ts_18"
+        android:textStyle="bold" />
+
+</LinearLayout>

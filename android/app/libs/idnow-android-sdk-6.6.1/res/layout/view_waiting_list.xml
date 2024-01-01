@@ -1,0 +1,205 @@
+<LinearLayout android:id="@+id/parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgPrimaryColor"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/checkScreenScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/idnow_di_10dp"
+                android:layout_marginLeft="@dimen/idnow_di_10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/idnow_di_40dp"
+                    android:layout_marginBottom="@dimen/idnow_di_20dp"
+                    android:gravity="top"
+                    >
+
+                    <TextView
+                        android:id="@+id/waiting_list_vip_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@color/primarytextColor"
+                        android:text="@string/waiting_list_vip_title"
+                        android:textSize="@dimen/idnow_ts_24" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/idnow_di_15dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/vip_witinglist_text_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/idnow_di_20dp"
+                            android:layout_marginBottom="@dimen/idnow_di_20dp"
+                            android:text="@string/vip_document_text"
+                            android:textColor="@color/primarytextColor"
+                            android:textSize="@dimen/idnow_ts_18"></TextView>
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/animationWL"
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/idnow_di_20dp"
+                            android:layout_marginBottom="@dimen/idnow_di_10dp">
+                        </com.airbnb.lottie.LottieAnimationView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/idnow_di_15dp"
+                            android:layout_marginBottom="@dimen/idnow_di_15dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/vip_witinglist_text_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textColor="@color/primarytextColor"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/idnow_ts_18"
+                                android:text="@string/vip_well_text">
+
+                            </TextView>
+
+                            <LinearLayout
+                                android:id="@+id/waiting_time_layout"
+                                android:layout_width="match_parent"
+                                android:gravity="center"
+                                android:layout_marginTop="@dimen/idnow_di_15dp"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/vip_witinglist_time"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="24sp"
+                                    android:textColor="@color/primarytextColor"
+                                    android:layout_marginRight="@dimen/idnow_di_15dp"
+                                    android:textStyle="bold"
+                                    android:text="12:03"></TextView>
+
+                                <TextView
+                                    android:id="@+id/vip_witinglist_text_3"
+                                    android:layout_width="83dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/waiting_estimated_text"
+                                    android:textColor="@color/primarytextColor"></TextView>
+
+                            </LinearLayout>
+
+
+
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="bottom"
+                    android:layout_marginBottom="@dimen/idnow_di_15dp"
+                    android:layout_marginRight="@dimen/idnow_di_20dp"
+                    android:layout_marginLeft="@dimen/idnow_di_20dp">
+
+                    <TextView
+                        android:id="@+id/vip_witinglist_text_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/primarytextColor"
+                        android:layout_marginBottom="@dimen/idnow_di_20dp"
+                        android:textSize="@dimen/idnow_ts_18"
+                        android:text="@string/vip_selfie_text">
+
+                    </TextView>
+
+                    <Button
+                        android:id="@+id/vip_ok_waiting_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vip_ok_waiting_list"
+                        android:textSize="@dimen/idnow_ts_18"
+                        android:textColor="@color/white"
+                        >
+                    </Button>
+
+                    <TextView
+                        android:layout_marginTop="@dimen/idnow_di_10dp"
+                        android:layout_marginBottom="@dimen/idnow_di_20dp"
+                        android:id="@+id/vip_witinglist_text_cancel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/primaryColor"
+                        android:textSize="@dimen/idnow_ts_18"
+                        android:text="@string/vip_cancel_waiting_list">
+                    </TextView>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/vip_starting_progressBar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"/>
+
+</LinearLayout>

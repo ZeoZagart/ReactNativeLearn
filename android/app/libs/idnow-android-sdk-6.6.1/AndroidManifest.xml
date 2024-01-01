@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="de.idnow.sdk"
+    android:versionCode="3"
+    android:versionName="1.1" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="33" />
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" /> <!-- needed to fix a bug -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application>
+        <activity
+            android:name="de.idnow.sdk.Activities.Activities_PDFViewer"
+            android:theme="@style/IdnowSdkTheme" />
+        <activity
+            android:name="de.idnow.sdk.Activities.Activities_AgentFeedbackActivity"
+            android:theme="@style/IdnowSdkTheme" />
+        <activity
+            android:name="de.idnow.sdk.Activities.Activities_HighCallVolumeActivity"
+            android:label="@string/idnow_sdk_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/IdnowSdkTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="de.idnow.sdk.Activities.Activities_VideoLiveStreamActivity_IceLink"
+            android:label="@string/idnow_sdk_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/IdnowSdkThemeWithoutBackround"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <activity
+            android:name="de.idnow.sdk.Activities.Activities_VideoLiveStreamActivity_CallQualityCheck"
+            android:label="@string/title_call_quality_check"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/IdnowSdkThemeWithoutBackround"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="de.idnow.sdk.Activities.Activities_ResultActivity"
+            android:label="@string/title_activity_result"
+            android:screenOrientation="portrait"
+            android:theme="@style/IdnowSdkTheme" />
+        <activity
+            android:name="de.idnow.sdk.Activities.Activities_VideoOverviewCheckActivity"
+            android:label="@string/title_activity_second"
+            android:screenOrientation="portrait"
+            android:theme="@style/IdnowSdkTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="de.idnow.sdk.Activities.Activities_EntryActivity"
+            android:label="@string/idnow_sdk_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/IdnowSdkThemeWithoutBackround"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="de.idnow.sdk.BaseActivities_BaseActivity"
+            android:label="@string/idnow_sdk_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="de.idnow.sdk.Activities.Activities_VideoOverviewCheckActivity_Super"
+            android:label="@string/idnow_sdk_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/IdnowSdkTheme" />
+        <activity
+            android:name="de.idnow.sdk.Activities.Activities_VideoLiveStreamActivity_Super"
+            android:label="@string/idnow_sdk_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/IdnowSdkTheme" />
+        <activity
+            android:name="de.idnow.sdk.Activities.Activities_BeforeStartingActivity"
+            android:label="@string/idnow_sdk_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/IdnowSdkTheme" />
+        <activity
+            android:name="de.idnow.sdk.Activities.Activities_DeviceSupportActivity"
+            android:label="@string/idnow_sdk_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/IdnowSdkTheme" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.de.idnow.sdk.provider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <receiver
+            android:name="de.idnow.sdk.NetworkStatusReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="de.idnow.sdk.util.Util_KillNotificationService" />
+        <service
+            android:name="de.idnow.sdk.util.IDnowForegroundService"
+            android:exported="false"
+            android:foregroundServiceType="microphone|camera" >
+            <intent-filter>
+                <action android:name=".util.IDnowForegroundService" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

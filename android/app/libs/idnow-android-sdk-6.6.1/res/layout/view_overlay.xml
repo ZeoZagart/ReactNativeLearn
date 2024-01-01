@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@color/bgPrimaryColor"
+        android:orientation="vertical">
+
+    <include layout="@layout/view_pdf_webview"/>
+
+    <RelativeLayout
+            android:id="@+id/eSigningWebViewContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/buttonView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="vertical"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="8dp">
+
+                <Button
+                    android:id="@+id/buttonNext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="12dp"
+                    android:background="@color/primaryColor"
+                    android:text="@string/e_signature_accept_contract_button"
+                    android:textColor="@color/live_stream_sign_contract_btn_text_color" />
+
+                <RelativeLayout
+                    android:id="@+id/linearLayoutSignatureButtons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/declineContractTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:drawablePadding="4dp"
+                        android:text="@string/e_signature_decline_contract"
+                        android:textColor="@color/primarytextColor"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/buttonView"
+                android:animateLayoutChanges="true"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/view_sign_contract"
+                    layout="@layout/view_sign_contract"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"/>
+
+                <View
+                    android:id="@+id/bufferView"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"/>
+
+                    <WebView
+                        android:id="@+id/openTrustWebView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentBottom="true"
+                        android:visibility="gone">
+                    </WebView>
+                </LinearLayout>
+            <Button
+                android:id="@+id/showContractTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="60dp"
+                android:gravity="center"
+                android:background="@color/bgSecondaryColor"
+                android:drawableLeft="@drawable/action_show_contract"
+                android:drawablePadding="4dp"
+                android:paddingLeft="16dp"
+                android:textColor="@color/primarytextColor"
+                android:paddingRight="16dp"
+                android:text="@string/e_signature_check_contract" />
+
+        <LinearLayout
+            android:id="@+id/view_background_progress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bgPrimaryColor"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/progressBarHeadline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="headline ..."
+                    android:textColor="@color/live_stream_esign_progressbar_headline_text_color"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:visibility="invisible"
+                    android:layout_marginBottom="20dp"
+                    />
+
+                <TextView
+                    android:id="@+id/progressBarDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Description description description"
+                    android:textColor="@color/live_stream_esign_progressbar_description_text_color"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:visibility="invisible"
+                    android:layout_marginBottom="20dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/contentView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"></ImageView>
+
+                <ProgressBar
+                    android:id="@+id/progressBarLoadingContract"
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminateTint="@color/primaryColor"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:id="@+id/eSigningNativeContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="180dp">
+
+        <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/light_gray" />
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:background="@color/bgPrimaryColor" />
+
+        <ImageView
+                android:id="@+id/eSigningButtonCheckDocument"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/action_collapse"
+                android:textColor="@color/proceed_button_text" />
+
+        <View
+                android:id="@+id/eSignSeparator"
+                android:layout_below="@+id/eSigningButtonCheckDocument"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="1dp"
+                android:visibility="visible"/>
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/eSignSeparator"
+            android:background="@color/bgPrimaryColor"
+                android:layout_marginTop="@dimen/activity_horizontal_margin">
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                <TextView
+                        android:id="@+id/eSigningTextViewHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/primarytextColor"
+                        android:text="Sie unterschreiben 1 Dokument test.doc. Für die Unterschrift der Dokumente kooperieren wir mit unserem Partner xxx." />
+
+                <LinearLayout
+                        android:id="@+id/eSignatureCheckBoxContainer"
+                        android:layout_below="@+id/eSigningTextViewHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/bgPrimaryColor"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/eSignatureCheckBoxButtonContainer"
+                    android:layout_width="match_parent"
+                    android:background="@color/bgPrimaryColor"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/eSignatureCheckBoxContainer"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="1dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/eSigningButtonNext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="@dimen/activity_horizontal_margin"
+                        android:layout_marginRight="8dp"
+                        android:text="@string/first_step_next"
+                        android:textColor="@color/live_stream_esign_button_text_color" />
+
+                    <Button
+                        android:id="@+id/eSigningButtonCancel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="@android:string/cancel"
+                        android:textColor="@color/live_stream_esign_button_text_color" />
+                </LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
+
+        <RelativeLayout
+                android:id="@+id/eSigningProgressContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+                <ProgressBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="?android:attr/progressBarStyleLarge"
+                        android:indeterminateTint="@color/primaryColor"
+                        android:layout_gravity="center_horizontal" />
+
+                <TextView
+                        android:id="@+id/eSigningProgressTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="@dimen/result_margin_between_result_buttons"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/live_stream_esign_progress_text_color"
+                        android:text="@string/step_esigning_wait" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/eSigningSuccessContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:background="@color/bgPrimaryColor"
+                    android:padding="@dimen/activity_vertical_margin"
+                    android:visibility="gone">
+
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/result_icon_height"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="@dimen/activity_vertical_margin"
+                        android:src="@drawable/ic_result_success"/>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/step_esigning_success"
+                        android:textColor="@color/success"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:id="@+id/eSigningExpandViewContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone">
+
+        <ImageView
+                android:id="@+id/eSigningButtonHideDocument"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="8dp"
+                android:src="@drawable/action_expand"
+                android:textColor="@color/live_stream_esign_hide_document_btn_text_color" />
+    </RelativeLayout>
+
+    <include
+        layout="@layout/view_user_constent"
+        android:id="@+id/eSignUserConsent"
+        android:visibility="gone" />
+
+</RelativeLayout>

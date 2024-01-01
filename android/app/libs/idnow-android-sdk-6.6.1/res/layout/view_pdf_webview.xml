@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/webViewPDFViewContainer"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:visibility="visible">
+
+    <Spinner
+        android:id="@+id/documentSpinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"/>
+
+    <de.idnow.sdk.util.Util_CustomWebView
+        android:id="@+id/webViewPdf"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </de.idnow.sdk.util.Util_CustomWebView>
+
+</LinearLayout>

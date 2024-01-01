@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+
+    <LinearLayout
+        android:id="@+id/spinnerBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="5dp"
+        android:layout_marginRight="@dimen/idnow_di_5dp"
+        android:layout_marginLeft="@dimen/idnow_di_5dp"
+        android:src="@drawable/flag_tn" /><!--Make sure image is present in Drawable folder-->
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:visibility="gone"
+        android:text="Tunisia"
+        android:textColor="#000" />
+        ></LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rounded_corner_white_background"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/cancelRerouting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:padding="@dimen/idnow_di_20dp"
+        android:src="@drawable/cancel" />
+
+    <TextView
+        android:id="@+id/titleRerouting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginBottom="@dimen/idnow_di_20dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/german_id_title"
+        ></TextView>
+    <TextView
+        android:id="@+id/descRerouting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/idnow_di_10dp"
+        android:layout_marginBottom="@dimen/idnow_di_20dp"
+        android:text="@string/german_id_desc"
+        android:textColor="@color/primarytextColor"
+        ></TextView>
+
+    <Button
+        android:id="@+id/tryRerouting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/idnow_di_10dp"
+        android:layout_marginRight="@dimen/idnow_di_10dp"
+        android:textColor="@color/buttontextColor"
+        android:textAllCaps="false"
+        android:background="@drawable/rounded_background_orange"
+        android:text="@string/german_id_button_eid">
+    </Button>
+
+    <TextView
+        android:id="@+id/continueRerouting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="@dimen/idnow_di_10dp"
+        android:layout_marginLeft="@dimen/idnow_di_10dp"
+        android:textColor="@color/primaryColor"
+        android:layout_marginBottom="@dimen/idnow_di_20dp"
+        android:gravity="center"
+        android:textSize="16dp"
+        android:text="@string/german_id_button_continue">
+    </TextView>
+
+</LinearLayout>

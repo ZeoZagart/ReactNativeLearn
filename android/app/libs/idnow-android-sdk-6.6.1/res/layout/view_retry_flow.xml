@@ -1,0 +1,286 @@
+<LinearLayout android:id="@+id/parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgPrimaryColor"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/checkScreenScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/idnow_di_20dp"
+                        android:layout_marginBottom="@dimen/idnow_di_10dp"
+                        android:gravity="top"
+                        android:orientation="vertical"
+                        >
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/logo_retry_flow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/idnow_di_20dp">
+                        </com.airbnb.lottie.LottieAnimationView>
+
+                        <TextView
+                            android:id="@+id/reuse_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:layout_marginBottom="@dimen/idnow_di_20dp"
+                            android:text="@string/reuse_welcome"
+                            android:textColor="@color/primarytextColor"
+                            android:textSize="@dimen/vip_title"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/reuse_desc"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/reuse_front_id"
+                            android:textColor="@color/primarytextColor"
+                            android:textSize="@dimen/vip_text" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:id="@+id/document_layout"
+                            android:layout_width="match_parent"
+                            android:layout_marginRight="@dimen/idnow_di_5dp"
+                            android:layout_marginLeft="@dimen/idnow_di_10dp"
+                            android:layout_marginBottom="@dimen/idnow_di_15dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/document_front"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    />
+                            </FrameLayout>
+
+                            <com.airbnb.lottie.LottieAnimationView
+                                android:id="@+id/check_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center|right" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:layout_weight="2"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:id="@+id/vip_document_front"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textColor="@color/primarytextColor"
+                                    android:layout_marginRight="@dimen/idnow_di_10dp"
+                                    android:layout_marginLeft="@dimen/idnow_di_10dp"
+                                    android:textSize="@dimen/vip_text"
+                                    android:text="@string/reuse_front_id">
+                                </TextView>
+
+                                <TextView
+                                    android:id="@+id/vip_document_text_1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/idnow_di_10dp"
+                                    android:layout_marginRight="@dimen/idnow_di_10dp"
+                                    android:gravity="center"
+                                    android:text="@string/reuse_checking"
+                                    android:textColor="@color/primarytextColor"
+                                    android:textSize="@dimen/vip_text"></TextView>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_marginRight="@dimen/idnow_di_5dp"
+                            android:layout_marginLeft="@dimen/idnow_di_10dp"
+                            android:layout_marginBottom="@dimen/idnow_di_15dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/document_back"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    />
+                            </FrameLayout>
+
+                            <com.airbnb.lottie.LottieAnimationView
+                                android:id="@+id/check_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|right"
+                                />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:layout_weight="2"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:id="@+id/vip_document_back"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textColor="@color/primarytextColor"
+                                    android:layout_marginRight="@dimen/idnow_di_10dp"
+                                    android:layout_marginLeft="@dimen/idnow_di_10dp"
+                                    android:textSize="@dimen/vip_text"
+                                    android:text="@string/reuse_back_id">
+                                </TextView>
+                                <TextView
+                                    android:id="@+id/vip_document_text_2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textColor="@color/primarytextColor"
+                                    android:layout_marginRight="@dimen/idnow_di_10dp"
+                                    android:layout_marginLeft="@dimen/idnow_di_10dp"
+                                    android:textSize="@dimen/vip_text"
+                                    android:text="@string/reuse_checking">
+                                </TextView>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_marginRight="@dimen/idnow_di_5dp"
+                            android:layout_marginLeft="@dimen/idnow_di_10dp"
+                            android:layout_marginBottom="@dimen/idnow_di_15dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/document_selfie"
+                                    android:layout_width="match_parent"
+                                    android:layout_marginLeft="@dimen/idnow_di_45dp"
+                                    android:layout_height="wrap_content"/>
+                            </FrameLayout>
+
+                            <com.airbnb.lottie.LottieAnimationView
+                                android:id="@+id/check_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="13dp"
+                                android:layout_gravity="center|right"
+                                />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:layout_weight="2"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:id="@+id/vip_document_selfie"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textColor="@color/primarytextColor"
+                                    android:layout_marginRight="@dimen/idnow_di_10dp"
+                                    android:layout_marginLeft="@dimen/idnow_di_10dp"
+                                    android:textSize="@dimen/vip_text"
+                                    android:text="@string/reuse_selfie">
+                                </TextView>
+                                <TextView
+                                    android:id="@+id/vip_document_text_3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textColor="@color/primarytextColor"
+                                    android:layout_marginRight="@dimen/idnow_di_10dp"
+                                    android:layout_marginLeft="@dimen/idnow_di_10dp"
+                                    android:textSize="@dimen/vip_text"
+                                    android:text="@string/reuse_checking">
+                                </TextView>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="@dimen/idnow_di_15dp"
+                        android:layout_marginRight="@dimen/idnow_di_20dp"
+                        android:layout_marginLeft="@dimen/idnow_di_20dp">
+                        <Button
+                            android:id="@+id/vip_save_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/reuse_saved_images"
+                            android:textAllCaps="false"
+                            android:textSize="@dimen/idnow_ts_18"
+                            android:textColor="@color/buttontextColor">
+                        </Button>
+
+                        <TextView
+                            android:id="@+id/retakePhoto_retry"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/idnow_di_20dp"
+                            android:textSize="@dimen/idnow_ts_18"
+                            android:gravity="center"
+                            android:textColor="@color/basicInputField"
+                            android:text="@string/reuse_take_new_photo"
+                            android:textStyle="bold">
+
+                        </TextView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</LinearLayout>
